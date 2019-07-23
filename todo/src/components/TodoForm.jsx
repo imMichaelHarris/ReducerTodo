@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const TodoForm = ({ dispatch }) => {
-  const [item, setItem] = useState();
+  const [item, setItem] = useState("");
 
   const handleChange = e => {
     setItem(e.target.value);
@@ -19,7 +19,7 @@ const TodoForm = ({ dispatch }) => {
   return (
     <form onSubmit={addItem}>
       <legend>Add Todo Item</legend>
-      <input autoComplete="off" onChange={handleChange} value={item} />
+      <input type="text" autoComplete="off" onChange={handleChange} value={item} />
       <button>Add</button>
     </form>
   );

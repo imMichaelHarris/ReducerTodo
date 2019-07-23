@@ -9,7 +9,7 @@ const TodoList = () => {
     <div>
         <TodoForm dispatch={dispatch} />
       {todos.map(todo => (
-        <Todo key={todo.id} todo={todo} />
+        <Todo key={todo.id} todo={todo} dispatch={dispatch}/>
       ))}
     </div>
   );
