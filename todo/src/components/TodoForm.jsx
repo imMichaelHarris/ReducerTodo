@@ -2,9 +2,11 @@ import React from 'react';
 
 const TodoForm = () => {
     return (
-        <div>
-Form
-        </div>
+        <form>
+            <legend>Add Todo Item</legend>
+            <input autoComplete="off" />
+            <button>Add</button>
+        </form>
     );
 };
 
