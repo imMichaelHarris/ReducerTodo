@@ -7,7 +7,10 @@ const TodoList = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState);
   return (
     <div>
+        <header>
         <TodoForm dispatch={dispatch} />
+        <button>Clear Completed</button>
+        </header>
       {todos.map(todo => (
         <Todo key={todo.id} todo={todo} dispatch={dispatch}/>
       ))}
