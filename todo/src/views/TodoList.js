@@ -1,8 +1,8 @@
 import React, {useReducer} from 'react';
-import {initialState} from '../reducers/todoReducer'
+import {initialState, todoReducer} from '../reducers/todoReducer'
 
 const TodoList = () => {
-
+    const [todos, dispatch] = useReducer(todoReducer, initialState)
     return (
         <div>
             
