@@ -9,14 +9,18 @@ const TodoForm = ({ dispatch }) => {
 
   const addItem = (e) => {
       e.preventDefault()
-      console.log('add item')
-    dispatch({ type: "ADD_TODO", payload: item });
+      const newItem = {
+          item: item,
+          completed: false,
+          id: new Date()
+      }
+    dispatch({ type: "ADD_TODO", payload: newItem });
   };
   return (
-    <form>
+    <form onSubmit={addItem}>
       <legend>Add Todo Item</legend>
       <input autoComplete="off" onChange={handleChange} value={item} />
-      <button onClick={addItem}>Add</button>
+      <button>Add</button>
     </form>
   );
 };
