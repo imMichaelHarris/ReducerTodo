@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const TodoForm = ({ dispatch }) => {
   const [item, setItem] = useState("");
 
@@ -7,20 +8,27 @@ const TodoForm = ({ dispatch }) => {
     setItem(e.target.value);
   };
 
-  const addItem = (e) => {
-      e.preventDefault()
-      const newItem = {
-          item: item,
-          completed: false,
-          id: new Date()
-      }
+  const addItem = e => {
+    e.preventDefault();
+    const newItem = {
+      item: item,
+      completed: false,
+      id: new Date(),
+      createdAt: Date.now(),
+      dueAt: Date.now() + 24 * 60 * 60
+    };
     dispatch({ type: "ADD_TODO", payload: newItem });
-    setItem("")
+    setItem("");
   };
   return (
     <form onSubmit={addItem}>
       <legend>Add Todo Item</legend>
-      <input type="text" autoComplete="off" onChange={handleChange} value={item} />
+      <input
+        type="text"
+        autoComplete="off"
+        onChange={handleChange}
+        value={item}
+      />
       <button>Add</button>
     </form>
   );
