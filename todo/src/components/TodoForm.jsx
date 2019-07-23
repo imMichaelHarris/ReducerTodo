@@ -15,6 +15,7 @@ const TodoForm = ({ dispatch }) => {
           id: new Date()
       }
     dispatch({ type: "ADD_TODO", payload: newItem });
+    setItem("")
   };
   return (
     <form onSubmit={addItem}>
