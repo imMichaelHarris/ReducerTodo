@@ -6,11 +6,13 @@ const TodoForm = ({ dispatch }) => {
   const handleChange = e => {
     setItem(e.target.value);
   };
+
+  const addItem = () => dispatch({type: "ADD_TODO", payload: item})
   return (
     <form>
       <legend>Add Todo Item</legend>
       <input autoComplete="off" onChange={handleChange} value={item} />
-      <button>Add</button>
+      <button >Add</button>
     </form>
   );
 };
