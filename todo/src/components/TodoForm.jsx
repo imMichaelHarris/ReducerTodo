@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import DatePicker from 'react-datepicker';
+import moment from  'moment'
 
 
 const TodoForm = ({ dispatch }) => {
@@ -14,10 +16,11 @@ const TodoForm = ({ dispatch }) => {
       item: item,
       completed: false,
       id: new Date(),
-      createdAt: Date.now(),
-      dueAt: Date.now() + 24 * 60 * 60
+      dueAt: moment().add(2, 'days').toDate()
+
     };
     dispatch({ type: "ADD_TODO", payload: newItem });
+    console.log(newItem)
     setItem("");
   };
   return (

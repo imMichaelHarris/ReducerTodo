@@ -7,6 +7,7 @@ const Todo = ({ todo, dispatch }) => {
     // <div onClick={toggle} className={todo.completed && "completed"}>
     <div onClick={toggle} className={todo.completed ? "completed" : null}>
       <h2>{todo.item}</h2>
+      <p>{moment().to(todo.dueAt)}</p>
     </div>
   );
 };
