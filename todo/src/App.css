@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.completed {
+  background: red;
+}
+.completed h2 {
+  text-decoration: line-through;
+}
+.due {
+  color: lightcoral
+}
